@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @open_house.Name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @open_house.Phone_number %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @open_house.Email_address %>
+</p>
+
+<p>
+  <strong>How did you here about our open house:</strong>
+  <%= @open_house.How_did_you_here_about_our_open_house %>
+</p>
+
+<p>
+  <strong>Are you working with a realtor:</strong>
+  <%= @open_house.Are_you_working_with_a_Realtor %>
+</p>
+
+<p>
+  <strong>Realtors name and contact information:</strong>
+  <%= @open_house.Realtors_name_and_contact_information %>
+</p>
+
+<p>
+  <strong>Would you like to be emailed new properties:</strong>
+  <%= @open_house.Would_you_like_to_be_emailed_new_properties %>
+</p>
+
+<%= link_to 'Edit', edit_open_house_path(@open_house) %> |
+<%= link_to 'Back', open_houses_path %>

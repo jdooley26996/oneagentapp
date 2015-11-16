@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Open Houses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th>Email address</th>
+      <th>How did you here about our open house</th>
+      <th>Are you working with a realtor</th>
+      <th>Realtors name and contact information</th>
+      <th>Would you like to be emailed new properties</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @open_houses.each do |open_house| %>
+      <tr>
+        <td><%= open_house.Name %></td>
+        <td><%= open_house.Phone_number %></td>
+        <td><%= open_house.Email_address %></td>
+        <td><%= open_house.How_did_you_here_about_our_open_house %></td>
+        <td><%= open_house.Are_you_working_with_a_Realtor %></td>
+        <td><%= open_house.Realtors_name_and_contact_information %></td>
+        <td><%= open_house.Would_you_like_to_be_emailed_new_properties %></td>
+        <td><%= link_to 'Show', open_house %></td>
+        <td><%= link_to 'Edit', edit_open_house_path(open_house) %></td>
+        <td><%= link_to 'Destroy', open_house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Open house', new_open_house_path %>

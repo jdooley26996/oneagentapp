@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenses</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<nav>
+			<% if user_signed_in? %>
+			<span>Hello <%= current_user.email %> </span>
+			<%= link_to 'sign out',destroy_user_session_path, method: :delete %>
+			<%= link_to 'new expense',new_expense_path %>
+			<%= link_to 'new open_house', new_open_house_path %>
+     <% else %>
+		
+			<%= link_to 'sign up', new_user_registration_path %>
+			<%= link_to 'sign in', new_user_session_path %>
+			
+			<% end %>
+		</nav>
+
+<body>
+	<div id="main-container" class="container>"
+		<div class="row">
+			<div class= "col-xs-3">
+				<h3>One Agent App </h3>
+			</div>
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <div class="col-xs-9">
+<%= yield %>
+</div>
+</div>
+</div>
+</body>
+</html>

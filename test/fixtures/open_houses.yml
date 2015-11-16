@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Phone_number: MyString
+  Email_address: MyString
+  How_did_you_here_about_our_open_house: MyString
+  Are_you_working_with_a_Realtor: false
+  Realtors_name_and_contact_information: MyString
+  Would_you_like_to_be_emailed_new_properties: MyString
+
+two:
+  Name: MyString
+  Phone_number: MyString
+  Email_address: MyString
+  How_did_you_here_about_our_open_house: MyString
+  Are_you_working_with_a_Realtor: false
+  Realtors_name_and_contact_information: MyString
+  Would_you_like_to_be_emailed_new_properties: MyString
