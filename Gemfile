@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
+gem 'therubyracer', '~> 0.12.2'
 
-
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 #ruby '2.0.0'
 # Use SCSS for stylesheets
+
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -22,7 +25,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'devise', '~> 3.5', '>= 3.5.2'
-# gem 'zurb-foundation', '~> 4.3', '>= 4.3.2'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'

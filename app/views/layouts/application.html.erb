@@ -12,6 +12,8 @@
 			<%= link_to 'sign out',destroy_user_session_path, method: :delete %>
 			<%= link_to 'new expense',new_expense_path %>
 			<%= link_to 'new open_house', new_open_house_path %>
+			<%= link_to 'Expenses', expenses_path %>
+			<%= link_to 'Open Houses', open_houses_path %>
      <% else %>
 		
 			<%= link_to 'sign up', new_user_registration_path %>
@@ -21,6 +23,7 @@
 		</nav>
 
 <body>
+	
 	<div id="main-container" class="container>"
 		<div class="row">
 			<div class= "col-xs-3">

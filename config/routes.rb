@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+
   resources :open_houses
   resources :names
  # get 'site/index'
 
   devise_for :users
   resources :expenses
- root 'site#index'
+ root 'expenses#index'
   # root 'expenses#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

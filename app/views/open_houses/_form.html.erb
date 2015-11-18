@@ -1,45 +1,80 @@
-<%= form_for(@open_house) do |f| %>
-  <% if @open_house.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@open_house.errors.count, "error") %> prohibited this open_house from being saved:</h2>
+<%= form_for @open_house, :html => { :class => "form-horizontal open_house" } do |f| %>
 
-      <ul>
-      <% @open_house.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @open_house.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@open_house.errors.count, "error") %> prohibited this open_house from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @open_house.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Name %><br>
-    <%= f.text_field :Name %>
+  <div class="control-group">
+    <%= f.label :Name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:Name]) %>
   </div>
-  <div class="field">
-    <%= f.label :Phone_number %><br>
-    <%= f.text_field :Phone_number %>
+  <div class="control-group">
+    <%= f.label :Phone_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Phone_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:Phone_number]) %>
   </div>
-  <div class="field">
-    <%= f.label :Email_address %><br>
-    <%= f.text_field :Email_address %>
+  <div class="control-group">
+    <%= f.label :Email_address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Email_address, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:Email_address]) %>
   </div>
-  <div class="field">
-    <%= f.label :How_did_you_here_about_our_open_house %><br>
-    <%= f.text_field :How_did_you_here_about_our_open_house %>
+  <div class="control-group">
+    <%= f.label :How_did_you_here_about_our_open_house, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :How_did_you_here_about_our_open_house, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:How_did_you_here_about_our_open_house]) %>
   </div>
-  <div class="field">
-    <%= f.label :Are_you_working_with_a_Realtor %><br>
-    <%= f.check_box :Are_you_working_with_a_Realtor %>
+  <div class="control-group">
+    <%= f.label :Are_you_working_with_a_Realtor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Are_you_working_with_a_Realtor, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:Are_you_working_with_a_Realtor]) %>
   </div>
-  <div class="field">
-    <%= f.label :Realtors_name_and_contact_information %><br>
-    <%= f.text_field :Realtors_name_and_contact_information %>
+  <div class="control-group">
+    <%= f.label :Realtors_name_and_contact_information, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Realtors_name_and_contact_information, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:Realtors_name_and_contact_information]) %>
   </div>
-  <div class="field">
-    <%= f.label :Would_you_like_to_be_emailed_new_properties %><br>
-    <%= f.text_field :Would_you_like_to_be_emailed_new_properties %>
+  <div class="control-group">
+    <%= f.label :Would_you_like_to_be_emailed_new_properties, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Would_you_like_to_be_emailed_new_properties, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:Would_you_like_to_be_emailed_new_properties]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@open_house[:user_id]) %>
   </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            open_houses_path, :class => 'btn btn-default' %>
+
 <% end %>
