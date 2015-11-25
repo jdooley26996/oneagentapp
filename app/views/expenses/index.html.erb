@@ -1,4 +1,16 @@
 <%- model_class = Expense -%>
+<%= form_tag "/" , method: :get do %>
+<%= text_field_tag :q, params[:q] %>
+<%= submit_tag "Search" %>
+<% end%>
+<P>
+  Download Your Expenses:
+  
+  <%= link_to "", expenses_path(format: "csv"), class: "btn-primary" %>
+  <%= link_to "Excel", expenses_path(format: "xls"), class: "btn-primary" %>
+ 
+  
+</p>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
@@ -7,6 +19,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:transaction_date) %></th>
       <th><%= model_class.human_attribute_name(:amount) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -14,13 +27,17 @@
     </tr>
   </thead>
   <tbody>
+    <%  %>
     <% @expenses.each do |expense| %>
+    <%  %>
       <tr>
         <td><%= link_to expense.id, expense_path(expense) %></td>
         <td><%= expense.title %></td>
-        <td><%= expense.amount %></td>
+        <td><%= expense.transaction_date %></td>
+        <td><%= number_to_currency  expense.amount %></td>
         <td><%= expense.user_id %></td>
         <td><%=l expense.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_expense_path(expense), :class => 'btn btn-default btn-xs' %>
@@ -32,9 +49,10 @@
         </td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
-
+<p  align="left">           Total Expenses &nbsp; <%= number_to_currency current_user.expenses.sum(:amount) %></p>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_expense_path,
             :class => 'btn btn-primary' %>

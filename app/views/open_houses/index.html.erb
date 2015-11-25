@@ -1,4 +1,8 @@
 <%- model_class = OpenHouse -%>
+<%= form_tag "/" , method: :get do %>
+<%= text_field_tag :q, params[:q] %>
+<%= submit_tag "Search" %>
+<% end%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>

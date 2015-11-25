@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width = device-width, initial-scale = 1"
+scale = 1">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <html>
 <head>
   <title>Expenses</title>
@@ -8,16 +13,17 @@
 </head>
 <nav>
 			<% if user_signed_in? %>
+			<%= image_tag current_user.gravatar_url %>
 			<span>Hello <%= current_user.email %> </span>
-			<%= link_to 'sign out',destroy_user_session_path, method: :delete %>
-			<%= link_to 'new expense',new_expense_path %>
-			<%= link_to 'new open_house', new_open_house_path %>
-			<%= link_to 'Expenses', expenses_path %>
-			<%= link_to 'Open Houses', open_houses_path %>
+			<%= link_to 'sign out',destroy_user_session_path, class: "btn btn-primary", method: :delete %>
+			<%= link_to 'new expense',new_expense_path, class: "btn btn-primary" %>
+			<%= link_to 'new open_house', new_open_house_path, class: "btn btn-primary" %>
+			<%= link_to 'Expenses', expenses_path, class: "btn btn-primary" %>
+			<%= link_to 'Open Houses', open_houses_path, class: "btn btn-primary" %>
      <% else %>
 		
-			<%= link_to 'sign up', new_user_registration_path %>
-			<%= link_to 'sign in', new_user_session_path %>
+			<%= link_to 'sign up', new_user_registration_path, class: "btn btn-primary" %>
+			<%= link_to 'sign in', new_user_session_path, class: "btn btn-primary" %>
 			
 			<% end %>
 		</nav>
@@ -26,13 +32,18 @@
 	
 	<div id="main-container" class="container>"
 		<div class="row">
-			<div class= "col-xs-3">
+			
 				<h3>One Agent App </h3>
 			</div>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-       <div class="col-xs-9">
-<%= yield %>
+       
+<div class="col-xs-9"><%= yield %>
+	<div class= "col-xs-3">
+		<h2> Advertisements </h2>
+		<table style="width:100%">
+		<TABLE BORDER> <TR BGCOLOR="#99CCFF"> <TH>Accountant</TH> <TH>Mortgage_Company  </TH><TH>Painter  </TH><TH>  Contractor</TH><TH>  Lawyer</TH><TH> Property_Tax_Reduction</TH><TH>  Home_Depot</TH> </TR>
+
 </div>
 </div>
 </div>

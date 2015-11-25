@@ -5,6 +5,17 @@ before_action :authenticate_user!
   # GET /expenses.json
   def index
     @expenses = current_user.expenses.all
+   # respond_to do |format|
+    #  format.html
+    
+    #  format.csv  { send_data @expenses.to_csv }
+# headers['Content-Dispositions'] = "attachmnet; filename=\"expense-list\""
+# headers['Content-Type'] 
+        
+ #     format.xls # {send_data @expenses.to_csv(col_sep: "\t")}
+      
+  #  end
+ # end
   end
 
   # GET /expenses/1
@@ -69,6 +80,7 @@ before_action :authenticate_user!
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:title, :amount)
+      params.require(:expense).permit(:title, :amount, :transaction_date)
     end
+    
 end
